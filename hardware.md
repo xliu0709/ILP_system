@@ -15,7 +15,7 @@ For perlimary design stability, the width should be 2^N, the depth should be 102
 ## IP information dictionary
 You need to provide a list of IP information with each item in the list including:
 - **ip_name**: the name of the IP, example: "IP0"
-- **hp_ports**: a list of string specifying which of the 4 HP port the IP is connected to, example: [0, 1, 2, 3]
+- **hp_ports**: a list of string specifying which of the 4 HP port the IP is connected to, example: [HP0, HP1, HP2, HP3]
 
 You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
 
