@@ -1,0 +1,4 @@
+task_id dependence  mem_offset  scalar_int
+1   None  0,  123,24,
+3   None  0,  24,
+5   0,  0,  0,
