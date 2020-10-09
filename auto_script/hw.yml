@@ -1,0 +1,35 @@
+
+HW_configs:
+  board_name: "em.avnet.com:ultra96v2:part0:1.0"
+  fpga_name: "xczu3eg-sbva484-1-e"
+  frequency: 250
+  IP_repo_path: "./HLS"
+  # board_name: "xilinx.com:zcu102:part0:3.3"
+  # fpga_name: "ga_part":"xczu9eg-ffvb1156-2-e"
+
+IP_configs:
+  IP0:
+    IP_type: "testing_IP0"
+    BRAM_port: [BRAM0,BRAM1]
+    DDR_port: [HP0,HP1,None,None]
+    instream_port: [INSTREAM]
+    instream_port_id: [0]
+    outstream_port: [OUTSTREAM]
+  IP1:
+    IP_type: "testing_IP1"
+    BRAM_port: [BRAM0,BRAM1]
+    DDR_port: [None,None,HP0,HP1]
+    instream_port: [INSTREAM]
+    instream_port_id: [1]
+    outstream_port: [OUTSTREAM]
+
+BRAM_configs:
+  BRAM0:
+    width: 128
+    depth: 1024
+    address: [0,16383]
+  BRAM1:
+    width: 128
+    depth: 1024
+    address: [16383,32767]
+
