@@ -12,24 +12,26 @@ IP_configs:
     IP_type: "testing_IP0"
     BRAM_port: [BRAM0,BRAM1]
     DDR_port: [HP0,HP1,None,None]
-    instream_port: [INSTREAM]
+    instream_port: [ISTREAM]
     instream_port_id: [0]
-    outstream_port: [OUTSTREAM]
+    outstream_port: [OSTREAM]
   IP1:
     IP_type: "testing_IP1"
     BRAM_port: [BRAM0,BRAM1]
-    DDR_port: [None,None,HP0,HP1]
-    instream_port: [INSTREAM]
+    DDR_port: [HP0,HP1,None,None]
+    instream_port: [ISTREAM]
     instream_port_id: [1]
-    outstream_port: [OUTSTREAM]
+    outstream_port: [OSTREAM]
 
 BRAM_configs:
   BRAM0:
     width: 128
     depth: 1024
-    address: [0,16383]
+    byte_address_offset: 0
+    range: 16K
   BRAM1:
     width: 128
     depth: 1024
-    address: [16383,32767]
+    byte_address_offset: 16384
+    range: 16K
 
