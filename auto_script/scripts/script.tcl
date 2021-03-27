@@ -4,9 +4,9 @@
 ## Copyright (C) 1986-2019 Xilinx, Inc. All Rights Reserved.
 ############################################################
 open_project HLS
-set_top testing_IP1
+set_top testing_IP0
 add_files hls_src/ddr_bench.cpp
-open_solution "solution2"
+open_solution "solution1"
 # set_part {xczu9eg-ffvb1156-2-e} -tool vivado
 set_part {xczu3eg-sbva484-1-e} -tool vivado
 create_clock -period 2 -name default

@@ -12,6 +12,9 @@ set_property -dict [list CONFIG.PSU__USE__M_AXI_GP1 {0} CONFIG.PSU__USE__S_AXI_G
 set_property -dict [list CONFIG.PSU__USE__IRQ0 {0}] [get_bd_cells zynq_ultra_ps_e_0]
 
 
+set_property -dict [list CONFIG.PSU__CRL_APB__PL0_REF_CTRL__FREQMHZ {250}] [get_bd_cells zynq_ultra_ps_e_0]
+
+
 set_property  ip_repo_paths  ./HLS [current_project]
 update_ip_catalog
 set IP_type stream_master
@@ -67,6 +70,13 @@ connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axis_interconnect_0/M
 apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config {Clk "/zynq_ultra_ps_e_0/pl_clk0 (249 MHz)" }  [get_bd_pins axis_interconnect_0/M00_AXIS_ACLK]
 connect_bd_intf_net -boundary_type upper [get_bd_intf_pins axis_interconnect_0/M01_AXIS] [get_bd_intf_pins stream_slave_1/in_stream]
 apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config {Clk "/zynq_ultra_ps_e_0/pl_clk0 (249 MHz)" }  [get_bd_pins axis_interconnect_0/M01_AXIS_ACLK]
+
+
+
+create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0
+set_property -dict [list CONFIG.Enable_32bit_Address {false} CONFIG.Use_Byte_Write_Enable {false} CONFIG.Byte_Size {9} CONFIG.Register_PortA_Output_of_Memory_Primitives {true} CONFIG.Use_RSTA_Pin {false} CONFIG.use_bram_block {Stand_Alone} CONFIG.EN_SAFETY_CKT {false}] [get_bd_cells blk_mem_gen_0]
+set_property -dict [list CONFIG.Write_Width_A {128} CONFIG.Write_Depth_A {1024} CONFIG.Read_Width_A {128} CONFIG.Write_Width_B {128} CONFIG.Read_Width_B {128}] [get_bd_cells blk_mem_gen_0]
+
 
 
 

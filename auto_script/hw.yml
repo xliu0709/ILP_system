@@ -5,7 +5,7 @@ HW_configs:
   frequency: 250
   IP_repo_path: "./HLS"
   # board_name: "xilinx.com:zcu102:part0:3.3"
-  # fpga_name: "ga_part":"xczu9eg-ffvb1156-2-e"
+  # fpga_name: "xczu9eg-ffvb1156-2-e"
 
 IP_configs:
   IP0:
